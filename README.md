@@ -18,5 +18,6 @@ $ python ../example/demo.py
 
 Screenshots
 -
-<img width="698" height="733" alt="image" src="https://github.com/user-attachments/assets/126570b3-32a2-4e7f-8bf6-0a2c25080ee5" />
-<img width="802" height="632" alt="image" src="https://github.com/user-attachments/assets/883c425b-4e8f-4339-abf7-e5199e58a38c" />
+<img width="698" height="733" alt="image" src="https://github.com/user-attachments/assets/bc800854-d8b9-42d2-8b58-99c8d770ef31" />
+
+<img width="734" height="626" alt="image" src="https://github.com/user-attachments/assets/c240ea54-675f-4be8-842c-9d8d612ae678" />
