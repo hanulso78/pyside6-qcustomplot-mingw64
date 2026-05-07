@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(PySide6QCustomPlot2)
+project(PySide6QCustomPlot)
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets PrintSupport)
@@ -37,114 +37,112 @@ set(SHIBOKEN_OUTPUT_FOLDER "${CMAKE_CURRENT_BINARY_DIR}/OUTPUTDIR")
 
 # Do not use a GLOB here, to allow for usage as OUTPUT in custom command
 set(SHIBOKEN_GENERATED_SOURCES
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/pyside6qcustomplot2_module_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/pyside6qcustomplot2_python.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcp_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcp_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpabstractplottable_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpabstractplottable_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxis_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxis_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxisrect_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxisrect_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxisticker_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxisticker_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpdataselection_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpdataselection_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpgraph_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpgraph_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpgraphdata_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpgraphdata_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpgrid_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpgrid_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayer_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayer_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayerable_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayerable_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayout_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayout_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayoutelement_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayoutelement_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayoutgrid_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayoutgrid_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplegend_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplegend_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplineending_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplineending_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcppainter_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcppainter_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpplottableinterface1d_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpplottableinterface1d_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcprange_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcprange_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpscatterstyle_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpscatterstyle_wrapper.h"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcustomplot_wrapper.cpp"
-    "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcustomplot_wrapper.h"
-
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpselectiondecorator_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpselectiondecorator_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickerlog_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickerlog_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpdatarange_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpdatarange_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpgraphdatacontainer_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpgraphdatacontainer_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpcurvedatacontainer_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpcurvedatacontainer_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpvector2d_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpvector2d_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpabstractitem_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpabstractitem_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemtracer_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemtracer_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemposition_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemposition_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemanchor_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemanchor_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxispainterprivate_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxispainterprivate_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpselectionrect_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpselectionrect_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpcurve_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpcurve_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpcurvedata_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpcurvedata_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemtext_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemtext_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemstraightline_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpitemstraightline_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickerdatetime_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickerdatetime_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpabstractlegenditem_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpabstractlegenditem_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpplottablelegenditem_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpplottablelegenditem_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qsharedpointer_qcpaxisticker_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qsharedpointer_qcpaxisticker_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qsharedpointer_qcpgraphdatacontainer_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qsharedpointer_qcpgraphdatacontainer_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qsharedpointer_qcpcurvedatacontainer_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qsharedpointer_qcpcurvedatacontainer_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/keyvalues_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/keyvalues_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayoutinset_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcplayoutinset_wrapper.h"
-
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickertime_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickertime_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickertext_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickertext_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickerpi_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickerpi_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickerfixed_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpaxistickerfixed_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpabstractpaintbuffer_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpabstractpaintbuffer_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcppaintbufferpixmap_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcppaintbufferpixmap_wrapper.h"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpmargingroup_wrapper.cpp"
-     "${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot2/qcpmargingroup_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/pyside6qcustomplot_module_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/pyside6qcustomplot_python.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcp_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcp_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpabstractplottable_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpabstractplottable_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxis_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxis_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxisrect_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxisrect_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxisticker_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxisticker_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpdataselection_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpdataselection_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpgraph_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpgraph_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpgraphdata_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpgraphdata_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpgrid_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpgrid_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayer_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayer_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayerable_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayerable_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayout_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayout_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayoutelement_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayoutelement_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayoutgrid_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayoutgrid_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplegend_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplegend_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplineending_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplineending_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcppainter_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcppainter_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpplottableinterface1d_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpplottableinterface1d_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcprange_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcprange_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpscatterstyle_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpscatterstyle_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcustomplot_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcustomplot_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpselectiondecorator_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpselectiondecorator_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickerlog_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickerlog_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpdatarange_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpdatarange_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpgraphdatacontainer_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpgraphdatacontainer_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpcurvedatacontainer_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpcurvedatacontainer_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpvector2d_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpvector2d_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpabstractitem_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpabstractitem_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemtracer_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemtracer_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemposition_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemposition_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemanchor_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemanchor_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxispainterprivate_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxispainterprivate_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpselectionrect_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpselectionrect_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpcurve_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpcurve_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpcurvedata_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpcurvedata_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemtext_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemtext_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemstraightline_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpitemstraightline_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickerdatetime_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickerdatetime_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpabstractlegenditem_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpabstractlegenditem_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpplottablelegenditem_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpplottablelegenditem_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qsharedpointer_qcpaxisticker_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qsharedpointer_qcpaxisticker_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qsharedpointer_qcpgraphdatacontainer_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qsharedpointer_qcpgraphdatacontainer_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qsharedpointer_qcpcurvedatacontainer_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qsharedpointer_qcpcurvedatacontainer_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/keyvalues_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/keyvalues_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayoutinset_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcplayoutinset_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickertime_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickertime_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickertext_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickertext_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickerpi_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickerpi_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickerfixed_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpaxistickerfixed_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpabstractpaintbuffer_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpabstractpaintbuffer_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcppaintbufferpixmap_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcppaintbufferpixmap_wrapper.h"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpmargingroup_wrapper.cpp"
+	"${SHIBOKEN_OUTPUT_FOLDER}/PySide6QCustomPlot/qcpmargingroup_wrapper.h"
 )
 
 add_custom_command(
@@ -168,7 +166,7 @@ add_custom_target(run_shiboken
 )
 
 add_library(
-    PySide6QCustomPlot2
+	PySide6QCustomPlot
     SHARED
     src/wrapper.hpp
     src/qcustomplot.cpp
@@ -180,7 +178,7 @@ add_library(
 # - include paths to python installation
 # - include paths to pyside and shiboken6_generator in .venv
 target_include_directories(
-    PySide6QCustomPlot2
+	PySide6QCustomPlot
     PRIVATE
     "src"
 	"${MINGW_PREFIX}/include"
@@ -196,19 +194,19 @@ target_include_directories(
 # Use the python stable ABI3:
 # See also https://docs.python.org/3/c-api/stable.html
 target_compile_definitions(
-    PySide6QCustomPlot2
+	PySide6QCustomPlot
     PRIVATE
 )
 
 set_target_properties(
-    PySide6QCustomPlot2
+	PySide6QCustomPlot
     PROPERTIES
     SUFFIX ".pyd"
 	PREFIX ""
 )
 
 target_link_directories(
-    PySide6QCustomPlot2
+	PySide6QCustomPlot
     PRIVATE
 	"${MINGW_PREFIX}/lib"
 	${SITE_PACKAGES_PATH}/shiboken6
@@ -216,7 +214,7 @@ target_link_directories(
 )
 
 target_link_libraries(
-    PySide6QCustomPlot2
+	PySide6QCustomPlot
     PRIVATE
     Qt6::Widgets
     Qt6::Core
@@ -225,14 +223,14 @@ target_link_libraries(
 )
 
 if(TARGET Shiboken6::libshiboken)
-  target_link_libraries(PySide6QCustomPlot2 PRIVATE Shiboken6::libshiboken)
+	target_link_libraries(PySide6QCustomPlot PRIVATE Shiboken6::libshiboken)
 endif()
 
 if(TARGET PySide6::pyside6)
-  target_link_libraries(PySide6QCustomPlot2 PRIVATE PySide6::pyside6)
+	target_link_libraries(PySide6QCustomPlot PRIVATE PySide6::pyside6)
 endif()
 
 install(
-    TARGETS PySide6QCustomPlot2
+	TARGETS PySide6QCustomPlot
     DESTINATION ${PY_BUILD_CMAKE_MODULE_NAME}
 )

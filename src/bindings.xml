@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<typesystem package="PySide6QCustomPlot2">
+<typesystem package="PySide6QCustomPlot">
 	<load-typesystem name="typesystem_core.xml" generate="no"/>
 	<!--    <load-typesystem name="typesystem_core_common.xml" generate="no"/>-->
 	<load-typesystem name="typesystem_widgets.xml" generate="no"/>
@@ -141,7 +141,7 @@
 				<remove-argument/>
 				<remove-default-expression/>
 			</modify-argument>
-			<modify-argument index="return" pyi-type="Tuple[PySide6QCustomPlot2.QCPLayerable, QVariant]">
+			<modify-argument index="return" pyi-type="Tuple[PySide6QCustomPlot.QCPLayerable, QVariant]">
 				<replace-type modified-type="(QCPLayerable*, QVariant selectionDetails)"/>
 			</modify-argument>
 			<inject-code class="target" position="beginning">

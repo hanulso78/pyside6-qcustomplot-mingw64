@@ -3,7 +3,7 @@ import math, sys, os
 #sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ".")
 
-from PySide6QCustomPlot2 import *
+from PySide6QCustomPlot import *
 from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import QTimer, Qt
 from PySide6.QtGui import QPen, QColor
@@ -11,7 +11,7 @@ from PySide6.QtGui import QPen, QColor
 app = QApplication([])
 
 widget = QCustomPlot()
-widget.setWindowTitle("QCustomPlot demo")
+widget.setWindowTitle("PySide6QCustomPlot Demo")
 widget.setInteractions(QCP.Interaction.iRangeZoom | QCP.Interaction.iRangeZoom)
 widget.setPlottingHint(QCP.PlottingHint.phFastPolylines, True)
 widget.legend.setVisible(True)
