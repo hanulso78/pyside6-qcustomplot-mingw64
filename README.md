@@ -11,6 +11,7 @@ Install & Test
 -
 ```
 $ mkdir build
+$ cd build
 $ cmake ..
 $ make
 $ python ../example/demo.py
